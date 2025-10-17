@@ -1,2 +1,52 @@
-# ztcsr
-1
+# ztcsr Music Suite
+
+一个高级的命令行音乐软件，提供曲库管理、播放列表、均衡器以及推荐系统等功能。该项目以 Python 编写，能够快速导入曲目、模拟播放流程，并生成个性化推荐。
+
+## 功能亮点
+
+- **曲库管理**：支持导入、搜索、更新曲目信息，自动持久化到本地 JSON 存储。
+- **播放模拟**：可处理播放队列、跨曲目淡入淡出、跳过与回放等操作，同时记录详细的播放事件历史。
+- **均衡器系统**：内置多种 EQ 预设并支持渐变过渡，方便根据氛围动态调整音效。
+- **智能推荐**：基于曲目流行度与情绪标签的混合推荐算法，提供心情筛选和热门趋势列表。
+
+## 快速开始
+
+```bash
+pip install -e .[dev]
+```
+
+### 导入曲目
+
+```bash
+python -m music_app.cli import examples/sample_tracks.json
+```
+
+### 查看曲库
+
+```bash
+python -m music_app.cli list
+python -m music_app.cli list --filter "calm"
+```
+
+### 播放播放列表
+
+```bash
+python -m music_app.cli play examples/sample_playlist.json
+```
+
+### 获取推荐
+
+```bash
+python -m music_app.cli recommend mood calm
+python -m music_app.cli recommend trending
+```
+
+## 运行测试
+
+```bash
+pytest
+```
+
+## 许可证
+
+MIT

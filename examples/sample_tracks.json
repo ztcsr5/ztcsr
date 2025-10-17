@@ -1,0 +1,32 @@
+[
+  {
+    "id": "trk-001",
+    "title": "Sunrise Echoes",
+    "artist": "Aurora Lane",
+    "album": "Dawn Chorus",
+    "duration_seconds": 242,
+    "genre": "Ambient",
+    "moods": ["calm", "uplifting"],
+    "bpm": 90
+  },
+  {
+    "id": "trk-002",
+    "title": "Neon Pulse",
+    "artist": "Midnight Circuit",
+    "album": "City Lights",
+    "duration_seconds": 198,
+    "genre": "Synthwave",
+    "moods": ["energetic", "retro"],
+    "bpm": 118
+  },
+  {
+    "id": "trk-003",
+    "title": "Velvet Streets",
+    "artist": "Soul Avenue",
+    "album": "Moonlit Drive",
+    "duration_seconds": 215,
+    "genre": "Nu Jazz",
+    "moods": ["smooth", "late night"],
+    "bpm": 104
+  }
+]
