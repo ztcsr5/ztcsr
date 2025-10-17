@@ -11,35 +11,71 @@
 
 ## 快速开始
 
-```bash
-pip install -e .[dev]
-```
+1. **安装依赖**
 
-### 导入曲目
+   ```bash
+   pip install -e .[dev]
+   ```
 
-```bash
-python -m music_app.cli import examples/sample_tracks.json
-```
+2. **查看帮助信息**：任意时候可使用 `-h/--help` 获取可用子命令与参数。
 
-### 查看曲库
+   ```bash
+   python -m music_app.cli --help
+   ```
 
-```bash
-python -m music_app.cli list
-python -m music_app.cli list --filter "calm"
-```
+3. **导入曲目数据**：项目附带了示例曲库，首次使用可直接导入。
 
-### 播放播放列表
+   ```bash
+   python -m music_app.cli import examples/sample_tracks.json
+   ```
 
-```bash
-python -m music_app.cli play examples/sample_playlist.json
-```
+4. **浏览曲库**：列出全部曲目或通过 `--filter` 关键字匹配标题、艺术家或情绪标签。
 
-### 获取推荐
+   ```bash
+   python -m music_app.cli list
+   python -m music_app.cli list --filter "calm"
+   ```
 
-```bash
-python -m music_app.cli recommend mood calm
-python -m music_app.cli recommend trending
-```
+5. **创建或播放播放列表**：播放命令既可读取示例文件，也可以指向你自己编写的 JSON 播放列表。
+
+   ```bash
+   python -m music_app.cli play examples/sample_playlist.json
+   ```
+
+   自定义播放列表示例结构：
+
+   ```json
+   {
+     "name": "Focus Session",
+     "tracks": ["track_id_1", "track_id_2"],
+     "crossfade": 4
+   }
+   ```
+
+6. **应用均衡器预设**：在播放过程中可通过 `--eq` 指定 EQ 预设名称（如 `warm`、`bright`）。
+
+   ```bash
+   python -m music_app.cli play examples/sample_playlist.json --eq warm
+   ```
+
+7. **获取推荐**：按照心情或趋势筛选推荐曲目。
+
+   ```bash
+   python -m music_app.cli recommend mood calm
+   python -m music_app.cli recommend trending
+   ```
+
+8. **查看播放历史**：导入与播放后，可使用以下命令查看最近的播放事件。
+
+   ```bash
+   python -m music_app.cli history --limit 10
+   ```
+
+9. **重置数据**：如果想清空曲库与播放记录，可使用 `reset` 命令。
+
+   ```bash
+   python -m music_app.cli reset
+   ```
 
 ## 运行测试
 
